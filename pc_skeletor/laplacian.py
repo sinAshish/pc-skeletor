@@ -477,7 +477,7 @@ class SLBC(LaplacianBasedContractionBase):
         pos = np.vstack([rows, cols]).T
         connection_pos = np.where(pos[:, 1] > num_amplification_points)[0]
         connection_pos_idx = np.unique(pos[connection_pos][:, 0])
-        mask = np.ones(pcd_points.shape[0], np.bool_)
+        mask = np.ones(pcd_points.shape[0], bool)
 
         mask[connection_pos_idx] = 0
         num_valid = np.arange(0, pcd_points.shape[0])[mask]
